@@ -7,15 +7,23 @@ This project demonstrates the behavior of Django signals with respect to:
 2. Thread execution  
 3. Database transaction behavior  
 
-All answers are supported with practical code demonstrations inside a Django project.
+Additionally, a custom Python class (`Rectangle`) is implemented to demonstrate iterable behavior.
 
 ---
 
 ##  Project Structure
 
-- config/ → Django project settings  
-- core/ → App containing models, views, and signals  
-- manage.py → Entry point  
+django-signals-assignment/
+│
+├── config/        # Django project settings  
+├── core/          # App containing models, views, signals, rectangle class  
+│   ├── signals.py  
+│   ├── views.py  
+│   ├── models.py  
+│   ├── rectangle.py   # Custom Rectangle class  
+│
+├── manage.py  
+├── README.md  
 
 ---
 
@@ -25,9 +33,9 @@ All answers are supported with practical code demonstrations inside a Django pro
 Django signals are **synchronous by default**.
 
 **Proof:**  
-- A delay (`time.sleep(5)`) is added inside the signal  
-- The HTTP response waits until the signal completes  
-- This proves signals block execution → synchronous behavior  
+- A delay (`time.sleep(5)`) is introduced inside the signal  
+- The HTTP response waits until the signal execution completes  
+- This confirms blocking behavior → synchronous execution  
 
 ---
 
@@ -37,9 +45,9 @@ Django signals are **synchronous by default**.
 Yes, Django signals run in the **same thread as the caller**.
 
 **Proof:**  
-- Thread ID printed inside the view  
-- Thread ID printed inside the signal  
-- Both IDs are identical → same thread execution  
+- Printed thread ID inside the view  
+- Printed thread ID inside the signal  
+- Both IDs match → confirms same thread execution  
 
 ---
 
@@ -49,19 +57,28 @@ Yes, Django signals run in the **same thread as the caller**.
 Yes, Django signals run in the **same database transaction by default**.
 
 **Proof:**  
-- Exception raised inside signal  
-- Entire transaction is rolled back  
-- Confirms signal is part of same transaction  
+- An exception is raised inside the signal  
+- The entire database operation is rolled back  
+- Confirms signals are part of the same transaction  
 
 ---
 
-##  How to Run
+##  Custom Class: Rectangle
 
-```bash
-git clone https://github.com/dhanushpn1505/django-signals-assignment.git
-cd django-signals-assignment
+Implemented in:  
+core/rectangle.py  
 
-pip install django
+### ✔ Features
+- Requires `length` and `width` during initialization  
+- Supports iteration  
+- Outputs values in required format  
 
-python manage.py migrate
-python manage.py runserver
+###  Example Usage
+
+```python
+from core.rectangle import Rectangle
+
+rect = Rectangle(10, 5)
+
+for item in rect:
+    print(item)

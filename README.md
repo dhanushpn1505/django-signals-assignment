@@ -42,7 +42,7 @@ An exception raised in the signal causes a rollback of the entire transaction.
 ```bash
 git clone <your-repo-link>
 cd django-signals-assignment
-pip install -r requirements.txt
+pip install django
 python manage.py migrate
 python manage.py runserver
 ```

@@ -8,7 +8,7 @@ This project demonstrates the behavior of Django signals with respect to:
 2. Thread execution
 3. Database transaction behavior
 
----
+
 
 ## Q1: Are Django signals synchronous or asynchronous?
 
@@ -18,7 +18,6 @@ Django signals are synchronous by default.
 **Proof:**
 A delay (`time.sleep(5)`) inside the signal blocks the response until execution completes.
 
----
 
 ## Q2: Do Django signals run in the same thread?
 
@@ -28,7 +27,6 @@ Yes, signals run in the same thread.
 **Proof:**
 Thread IDs printed in both the view and signal are identical.
 
----
 
 ## Q3: Do Django signals run in the same transaction?
 
@@ -38,7 +36,6 @@ Yes, signals run in the same database transaction.
 **Proof:**
 An exception raised in the signal causes a rollback of the entire transaction.
 
----
 
 ## How to Run
 
@@ -60,7 +57,6 @@ Visit:
 http://127.0.0.1:8000/test/
 ```
 
----
 
 ## Author
 

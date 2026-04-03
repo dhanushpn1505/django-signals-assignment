@@ -1,6 +1,6 @@
 # Django Signals Assignment
 
-## 📌 Overview
+##  Overview
 This project demonstrates the behavior of Django signals with respect to:
 
 1. Synchronous vs Asynchronous execution  
@@ -11,7 +11,7 @@ All answers are supported with practical code demonstrations inside a Django pro
 
 ---
 
-## ⚙️ Project Structure
+##  Project Structure
 
 - config/ → Django project settings  
 - core/ → App containing models, views, and signals  
@@ -19,7 +19,7 @@ All answers are supported with practical code demonstrations inside a Django pro
 
 ---
 
-## 🧪 Q1: Are Django signals synchronous or asynchronous?
+##  Q1: Are Django signals synchronous or asynchronous?
 
 **Answer:**  
 Django signals are **synchronous by default**.
@@ -31,7 +31,7 @@ Django signals are **synchronous by default**.
 
 ---
 
-## 🧪 Q2: Do Django signals run in the same thread?
+##  Q2: Do Django signals run in the same thread?
 
 **Answer:**  
 Yes, Django signals run in the **same thread as the caller**.
@@ -43,7 +43,7 @@ Yes, Django signals run in the **same thread as the caller**.
 
 ---
 
-## 🧪 Q3: Do Django signals run in the same database transaction?
+##  Q3: Do Django signals run in the same database transaction?
 
 **Answer:**  
 Yes, Django signals run in the **same database transaction by default**.
@@ -55,7 +55,7 @@ Yes, Django signals run in the **same database transaction by default**.
 
 ---
 
-## ▶️ How to Run
+##  How to Run
 
 ```bash
 git clone https://github.com/dhanushpn1505/django-signals-assignment.git
